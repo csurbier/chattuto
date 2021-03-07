@@ -64,6 +64,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         return u'%s' % (self.email)
 
 class Chat(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     fromUser = models.ForeignKey(User, db_index=True,on_delete=models.SET_NULL, null=True,related_name="fromuser")
     toUser = models.ForeignKey(User, db_index=True,on_delete=models.SET_NULL, null=True,related_name="toUser")
     createdAt = models.DateTimeField(auto_now_add=True)
@@ -75,6 +76,7 @@ class Chat(models.Model):
 
 
 class Message(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     refChat = models.ForeignKey(Chat, db_index=True,on_delete=models.CASCADE)
     message = models.TextField()
     msg_type = (

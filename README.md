@@ -1,4 +1,4 @@
-# chattuto
+# Chat application with ionic and Django
 
 Source code repository.
 

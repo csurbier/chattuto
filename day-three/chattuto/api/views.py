@@ -16,7 +16,7 @@ class UserListView(generics.ListCreateAPIView):
     serializer_class = UserSerializer
     filterset_fields = ['password','id','email','first_name','last_name','valid']
     filter_backends = [DjangoFilterBackend,filters.SearchFilter,filters.OrderingFilter]
-    swagger_schema = None
+    #swagger_schema = None
     # Filter for connected user
     def get_queryset(self):
         user = self.request.user
@@ -28,7 +28,6 @@ class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    swagger_schema = None
     # Filter for connected user
     def get_queryset(self):
         user = self.request.user

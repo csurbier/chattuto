@@ -3,6 +3,7 @@ from chat.models import *
 
 class UserSerializer(ModelSerializer):
     class Meta:
+        ref_name="MyCustomUser"
         model = User
         fields = '__all__'
 

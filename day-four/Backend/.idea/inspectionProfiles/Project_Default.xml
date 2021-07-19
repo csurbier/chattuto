@@ -1,0 +1,58 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="43">
+            <item index="0" class="java.lang.String" itemvalue="geopy" />
+            <item index="1" class="java.lang.String" itemvalue="fcm-django" />
+            <item index="2" class="java.lang.String" itemvalue="django-cors-middleware" />
+            <item index="3" class="java.lang.String" itemvalue="kombu" />
+            <item index="4" class="java.lang.String" itemvalue="redis" />
+            <item index="5" class="java.lang.String" itemvalue="django-extensions" />
+            <item index="6" class="java.lang.String" itemvalue="django-map-widgets" />
+            <item index="7" class="java.lang.String" itemvalue="smsapi-client" />
+            <item index="8" class="java.lang.String" itemvalue="celery" />
+            <item index="9" class="java.lang.String" itemvalue="Faker" />
+            <item index="10" class="java.lang.String" itemvalue="django-braces" />
+            <item index="11" class="java.lang.String" itemvalue="django-pgcrypto" />
+            <item index="12" class="java.lang.String" itemvalue="markdown" />
+            <item index="13" class="java.lang.String" itemvalue="stripe" />
+            <item index="14" class="java.lang.String" itemvalue="googlemaps" />
+            <item index="15" class="java.lang.String" itemvalue="djangorestframework" />
+            <item index="16" class="java.lang.String" itemvalue="drf_autodocs" />
+            <item index="17" class="java.lang.String" itemvalue="django-jet" />
+            <item index="18" class="java.lang.String" itemvalue="djangorestframework-filters" />
+            <item index="19" class="java.lang.String" itemvalue="WeasyPrint" />
+            <item index="20" class="java.lang.String" itemvalue="django-imagekit" />
+            <item index="21" class="java.lang.String" itemvalue="django-oauth-toolkit" />
+            <item index="22" class="java.lang.String" itemvalue="rest-framework-cache" />
+            <item index="23" class="java.lang.String" itemvalue="django-import-export" />
+            <item index="24" class="java.lang.String" itemvalue="sendgrid" />
+            <item index="25" class="java.lang.String" itemvalue="django-admin-menu" />
+            <item index="26" class="java.lang.String" itemvalue="easy-thumbnails" />
+            <item index="27" class="java.lang.String" itemvalue="simplejson" />
+            <item index="28" class="java.lang.String" itemvalue="hiredis" />
+            <item index="29" class="java.lang.String" itemvalue="pyyaml" />
+            <item index="30" class="java.lang.String" itemvalue="django-cacheops" />
+            <item index="31" class="java.lang.String" itemvalue="coreapi" />
+            <item index="32" class="java.lang.String" itemvalue="django-autofixture" />
+            <item index="33" class="java.lang.String" itemvalue="dropbox" />
+            <item index="34" class="java.lang.String" itemvalue="django-filter" />
+            <item index="35" class="java.lang.String" itemvalue="Django" />
+            <item index="36" class="java.lang.String" itemvalue="django-redis" />
+            <item index="37" class="java.lang.String" itemvalue="pillow" />
+            <item index="38" class="java.lang.String" itemvalue="python-decouple" />
+            <item index="39" class="java.lang.String" itemvalue="django-registration" />
+            <item index="40" class="java.lang.String" itemvalue="cookiecutter" />
+            <item index="41" class="java.lang.String" itemvalue="pycountry" />
+            <item index="42" class="java.lang.String" itemvalue="mysql-connector-python" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="TsLint" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>

@@ -1,0 +1,45 @@
+<ion-content color="medium" padding padding-24>
+  <div class="auth-container">
+    <div class="form">
+      <div class="form-title">
+        Sign In 
+      </div>
+      <form [formGroup]="userForm">
+      <ion-list lines="none" mode="ios" login-form>
+        <ion-item mode="ios">
+          <ion-icon class="sw-email-solid" slot="start"></ion-icon>
+          <ion-input mode="ios" type="email" placeholder="Email"  name="email" formControlName="email" [class.invalid]="!userForm.controls.email.valid && (userForm.controls.email.dirty)"></ion-input>
+        </ion-item>
+         <ion-item *ngIf="!userForm.controls.email.valid  && (userForm.controls.email.dirty)">
+              <p>An email is required
+              </p>
+          </ion-item>
+          
+        <ion-item mode="ios">
+          <ion-icon class="sw-lock-sold" slot="start"></ion-icon>
+          <ion-input mode="ios" type="password"  placeholder="Password" formControlName="password" [class.invalid]="!userForm.controls.password.valid && (userForm.controls.password.dirty)"></ion-input>
+        </ion-item>
+         <ion-item *ngIf="!userForm.controls.password.valid  && (userForm.controls.password.dirty)">
+              <p>min. 8 characters required with lowercase, uppercase, number and special character</p>
+          </ion-item>
+      </ion-list>
+      <div class="buttons-forgot" text-right>
+       
+        <ion-button mode="ios" expand="block" color="danger" [disabled]="!userForm.valid" (click)="login()">
+          Sign in
+        </ion-button>
+      </div>
+     
+      </form>
+      <p class="instruction" (click)="cgu()">By signin, you will accept our terms and condition.</p>
+    </div>
+  </div>
+</ion-content>
+<ion-footer no-border mode="ios" auth>
+  <ion-toolbar color="medium" mode="ios" text-center>
+    <div class="option-auth">
+      <p>Not yet registered?</p>
+      <ion-button fill="clear" expand="block" routerLink="/register-page" mode="ios" color="danger">Sign up</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

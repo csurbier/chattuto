@@ -1,0 +1,21 @@
+{
+	"appId": "com.idevotion.chattuto",
+	"appName": "ChatTuto",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false,
+			"androidScaleType": "CENTER_CROP",
+			"androidSpinnerStyle": "large",
+			"iosSpinnerStyle": "large",
+			"spinnerColor": "#ffffff",
+			"showSpinner": true,
+			"splashFullScreen": true,
+			"splashImmersive": true
+		}
+	},
+	"server": {
+		"url": "http://192.168.1.58:8100"
+	}
+}

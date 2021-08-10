@@ -1,0 +1,26 @@
+.image-profile {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    border-radius: 50%;
+    border: 3px solid green;
+    margin-right: 10px;
+ }
+
+ .username{
+     font-weight: bold;
+ }
+
+ .messageUnread{
+     p{
+        font-weight: bold;
+        color: red;
+     }
+ }
+
+ .messageread{
+    p{
+       font-weight: normal;
+       color: black;
+    }
+}

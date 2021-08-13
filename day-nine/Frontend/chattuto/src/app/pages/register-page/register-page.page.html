@@ -1,0 +1,70 @@
+<ion-content color="medium" padding padding-24>
+  <div class="auth-container">
+
+    <div class="form">
+
+      <div class="form-title">
+        Register
+      </div>
+        <p *ngIf="submitAttempt" style="color: #ea6153;">Please filled all fields correctly</p>
+
+      <form [formGroup]="userForm">
+     
+      <ion-list lines="none" mode="ios" login-form>
+         <ion-item>
+             <ion-icon class="sw-user-solid" slot="start"></ion-icon>
+            <ion-input formControlName="firstName" placeholder="LastName" type="text" [class.invalid]="!userForm.controls.firstName.valid && (userForm.controls.firstName.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+           <ion-item *ngIf="!userForm.controls.firstName.valid  && (userForm.controls.firstName.dirty || submitAttempt)">
+              <p>3 characters min.</p>
+          </ion-item>
+        <ion-item mode="ios">
+          <ion-icon class="sw-user-solid" slot="start"></ion-icon>
+           <ion-input formControlName="lastName" type="text" placeholder="FirstName" [class.invalid]="!userForm.controls.lastName.valid && (userForm.controls.lastName.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+          <ion-item *ngIf="!userForm.controls.lastName.valid  && (userForm.controls.lastName.dirty || submitAttempt)">
+              <p>3 characters min.</p>
+          </ion-item>
+        <ion-item mode="ios">
+          <ion-icon class="sw-email-solid" slot="start"></ion-icon>
+          <ion-input mode="ios" type="email" placeholder="Email"  name="email" formControlName="email" [class.invalid]="!userForm.controls.email.valid && (userForm.controls.email.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+         <ion-item *ngIf="!userForm.controls.email.valid  && (userForm.controls.email.dirty || submitAttempt)">
+              <p>An email is required
+              </p>
+          </ion-item>
+          
+        <ion-item mode="ios">
+          <ion-icon class="sw-lock-sold" slot="start"></ion-icon>
+          <ion-input mode="ios" type="password"  placeholder="Password" formControlName="password" [class.invalid]="!userForm.controls.password.valid && (userForm.controls.password.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+         <ion-item *ngIf="!userForm.controls.password.valid  && (userForm.controls.password.dirty || submitAttempt)">
+              <p>min. 8 characters required with lowercase, uppercase, number and special character</p>
+          </ion-item>
+        <ion-item mode="ios">
+          <ion-icon class="sw-lock-sold" slot="start"></ion-icon>
+          <ion-input mode="ios" type="password"   placeholder="Confirm password"  formControlName="confirmpassword" [class.invalid]="!userForm.controls.confirmpassword.valid && (userForm.controls.confirmpassword.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+           <ion-item *ngIf="!userForm.controls.confirmpassword.valid  && (userForm.controls.confirmpassword.dirty || submitAttempt)">
+              <p>Please confirm password</p>
+          </ion-item>
+      </ion-list>
+      <ion-button mode="ios" expand="block" color="danger" [disabled]="!userForm.valid" (click)="register()">
+        Create account
+      </ion-button>
+     
+      </form>
+      <p class="instruction" (click)="cgu()">By registering you are accepting our terms and conditions</p>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer no-border mode="ios" auth>
+  <ion-toolbar color="medium" mode="ios" text-center>
+    <div class="option-auth">
+      <p>Already a member ?</p>
+      <ion-button fill="clear" expand="block" routerLink="/login" mode="ios" color="danger">Sign in</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

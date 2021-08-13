@@ -1,0 +1,10 @@
+export POSTGRESQL_ADDON_URI=postgresql://u6rogoiqgpupp3mvhqi9:F1Kc6J1pKEt5X28iX4Fn@bx8gb6agpf58jh3rtupa-postgresql.services.clever-cloud.com:5432/bx8gb6agpf58jh3rtupa
+export POSTGRESQL_ADDON_PORT=5432
+export POSTGRESQL_ADDON_HOST=bx8gb6agpf58jh3rtupa-postgresql.services.clever-cloud.com
+export POSTGRESQL_ADDON_DB=bx8gb6agpf58jh3rtupa
+export POSTGRESQL_ADDON_USER=u6rogoiqgpupp3mvhqi9
+export POSTGRESQL_ADDON_PASSWORD=F1Kc6J1pKEt5X28iX4Fn
+export DEBUG=True
+export MEDIA_URL_PREFIX=/media
+export STATIC_URL_PREFIX=/static
+export REDIS_URL='redis://:8xl8BcoUMSGF8VRusFF@bencxbqyxqwogjio87ai-redis.services.clever-cloud.com:3294/12'

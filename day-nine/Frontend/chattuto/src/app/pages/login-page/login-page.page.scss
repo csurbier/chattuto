@@ -1,0 +1,22 @@
+.buttons-forgot {
+    ion-button {
+        &.forgot-password {
+            font-size: 15px;
+            margin: 0;
+            min-height: unset;
+            height: 34px;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+
+.option-auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+p {
+    font-size: 0.8em;
+    color: red;
+}

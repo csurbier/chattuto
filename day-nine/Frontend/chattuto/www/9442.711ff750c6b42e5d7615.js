@@ -1,0 +1,1 @@
+(self.webpackChunkchattuto=self.webpackChunkchattuto||[]).push([[9442],{9442:(s,e,a)=>{"use strict";a.r(e),a.d(e,{SplashScreenWeb:()=>t});var c=a(5310);class t extends c.Uw{async show(s){}async hide(s){}}}}]);

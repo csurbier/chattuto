@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ChatTuto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-searchbar #searchbar placeholder="Search users" inputmode="text" type="text" 
+    (ionChange)="onSearchChange($event)" 
+    [debounce]="250">
+  </ion-searchbar>
+  <ion-list mode="ios" no-lines message-list> 
+      <ion-item  *ngFor="let item of listOfUser">
+        <div  [ngClass]="item.classonline"  [ngStyle]="{'background':item.backgroundColor}">
+          
+        </div>
+        <ion-label class="username">{{item.first_name}} {{item.last_name}}</ion-label>
+        <ion-button slot="end" (click)="createChat(item)" expand="block" fill="clear" shape="round">
+          <ion-icon name="chatbubbles-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+   </ion-list>
+
+   <!-- Chat list -->
+   <ion-list-header>
+    <ion-label>Chats</ion-label>
+  </ion-list-header>
+   <ion-list mode="ios" no-lines message-list> 
+    <ion-item  *ngFor="let chat of chatList" (click)="goToChat(chat)">
+      <div [ngClass]="chat.classonline" [ngStyle]="{'background':chat.backgroundColor}">
+        
+      </div>
+      <ion-label class="username" *ngIf="chat.fromUser.id!=userManager.currentUser.id">
+        <ion-row [ngClass]="chat.classMessage" >
+          <ion-col size="10">
+            <h2>{{chat.fromUser.first_name}} {{chat.fromUser.last_name}}</h2>
+            <p *ngIf="chat.lastMessage.length>0">
+              {{chat.lastMessage[0].message}} 
+            </p>
+          </ion-col>
+          <ion-col size="2" *ngIf="chat.lastMessage.length>0">
+            <!-- MESSAGE DATE -->
+            <span class="timestamp" *ngIf="chat.lastMessage[0].isRead">{{ chat.lastMessage[0].updatedAt | date: 'HH:mm' }}</span>
+            <ion-badge *ngIf="!chat.lastMessage[0].isRead" color="primary">
+              {{ chat.lastMessage[0].updatedAt | date: 'HH:mm' }}
+            </ion-badge>
+          </ion-col>
+        </ion-row>
+      </ion-label>
+      <ion-label class="username" *ngIf="chat.toUser.id!=userManager.currentUser.id">
+        <ion-row [ngClass]="chat.classMessage" >
+          <ion-col size="10">
+            <h2>{{chat.toUser.first_name}} {{chat.toUser.last_name}}</h2>
+            <p *ngIf="chat.lastMessage.length>0">
+              {{chat.lastMessage[0].message}} 
+            </p>
+          </ion-col>
+          <ion-col size="2" *ngIf="chat.lastMessage.length>0">
+            <!-- MESSAGE DATE -->
+            <span class="timestamp" *ngIf="chat.lastMessage[0].isRead">{{ chat.lastMessage[0].updatedAt | date: 'HH:mm' }}</span>
+            <ion-badge *ngIf="!chat.lastMessage[0].isRead" color="primary">
+              {{ chat.lastMessage[0].updatedAt | date: 'HH:mm' }}
+            </ion-badge>
+           </ion-col>
+        </ion-row>
+      </ion-label>
+    </ion-item>
+ </ion-list>
+</ion-content>

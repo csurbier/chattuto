@@ -34,7 +34,7 @@ class ChatConsumer(WebsocketConsumer):
         message.refChat_id = data["refChat"]
         message.message = data["message"]
         message.author_id = data["author"]
-        message.isRead = data["isRead"]
+        message.isRead = False
         message.type = data["type"]
         message.extraData = data["extraData"]
         message.save()
@@ -47,7 +47,8 @@ class ChatConsumer(WebsocketConsumer):
             author : refUser
             message : ""
             type : 0
-            extraData : ""
+            extraData : "",
+            eventType: ""
         }
     """
 
@@ -55,13 +56,6 @@ class ChatConsumer(WebsocketConsumer):
         data_json = json.loads(text_data)
         print("===Received")
         print(data_json)
-        # Add the online information in the data_json
-        user = User.objects.get(id=data_json['author'])
-        if user.online:
-            data_json["isRead"] = True
-        else:
-            data_json["isRead"] = False
-        message = data_json['message']
         # save message to database
         self.new_message(data_json)
         # Send message to room group

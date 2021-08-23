@@ -1,0 +1,2 @@
+[20/Aug/2021 08:43:00] INFO [django:15] ============== BEGIN TASK CELERY: task_check_notifications Instance
+[20/Aug/2021 08:43:00] INFO [django:17] ============== END TASK CELERY: task_check_notifications Instance

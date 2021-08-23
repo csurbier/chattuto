@@ -1,0 +1,34 @@
+.image-profile-online{
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    border-radius: 50%;
+    border: 3px solid rgb(23, 247, 23);
+    margin-right: 10px;
+ }
+ .image-profile-offline{
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    border-radius: 50%;
+    border: 3px solid red;
+    margin-right: 10px;
+ }
+
+ .username{
+     font-weight: bold;
+ }
+
+ .messageUnread{
+     p{
+        font-weight: bold;
+        color: red;
+     }
+ }
+
+ .messageread{
+    p{
+       font-weight: normal;
+       color: black;
+    }
+}

@@ -1,0 +1,69 @@
+<ion-header no-border mode="ios">
+  <ion-toolbar color="light" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button mode="ios" color="dark" routerDirection="back" routerLink="/home">
+        <ion-icon name="arrow-back-outline"></ion-icon>Back
+      </ion-button>
+   
+    </ion-buttons>
+   <ion-title color="primary">{{username}}</ion-title>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding #content [scrollEvents]="true"  (ionScroll)="checkScrolling($event)">
+	<ion-list>	
+    
+	<div *ngFor="let message of messages; let i = index">
+		<div class="chat">
+      <ion-row class="dateMessage" *ngIf="isDifferentDay(i)">
+        <ion-badge>{{getMessageDate(i)}}</ion-badge>
+      </ion-row>
+      <div [class]="message.author=== myUser.id ? 'messageFromMe' : 'messageFromOther'">
+        <span *ngIf="message.type==0">
+          {{message.message}}
+        </span>
+        <span *ngIf="message.type==1" class="chatimage">
+          <ion-img src="assets/imgs/chatlocate.png" (click)="showLocation(message)"></ion-img>
+        </span>
+        <span *ngIf="message.type==2" class="chatimage">
+          <ion-img ionImgViewer [src]="message.extraData"></ion-img>
+        </span>
+        <span class="timestamp">
+          {{ message.createdAt | date:'HH:mm' }}
+          <ion-icon name="checkmark-done-circle-outline" *ngIf="message.author === myUser.id && message.isRead"></ion-icon>
+          <ion-icon name="ellipse-outline" *ngIf="message.author === myUser.id && !message.isRead"></ion-icon>
+        </span>
+      </div>
+		</div>
+	</div>
+	</ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+   <ion-row class="ion-align-items-center attachments">
+     <ion-col size="6">
+      <ion-textarea   [(ngModel)]="messageToSend" autocapitalize="sentence"
+      placeholder="Type a message" spellcheck="false" color="dark" autoGrow="true"
+      rows="1"></ion-textarea>
+    </ion-col>
+    <ion-col size="2" >
+      <ion-button (click)="clicGeoloc()" color="dark" shape="round" fill="clear">
+        <ion-icon name="location-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="2">
+      <ion-button (click)="clicCamera()" color="dark" shape="round" fill="clear">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
+     </ion-col>
+     <ion-col size="2">
+      <ion-button   (click)="sendMessage()" shape="round" fill="clear" [disabled]="messageToSend === ''">
+        <ion-icon name="paper-plane-outline"></ion-icon>
+      </ion-button>
+     </ion-col>
+   </ion-row>
+  </ion-toolbar>
+</ion-footer> 

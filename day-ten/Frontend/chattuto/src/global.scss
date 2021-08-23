@@ -1,0 +1,333 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+// Font
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,900&display=swap');
+
+:root,
+.md,
+.ios {
+    --ion-font-family: 'Lato', sans-serif;
+    --ion-danger-gradient-start: #FF5A5F;
+    --ion-danger-gradient-end: #FE4D88;
+}
+
+ion-title {
+    font-size: 26px;
+    font-weight: 700;
+} 
+[padding-24] {
+    --padding-start: 24px;
+    --padding-end: 24px;
+    --padding-top: 24px;
+    --padding-bottom: 24px;
+}
+
+[padding-lr-24] {
+    --padding-start: 24px;
+    --padding-end: 24px;
+}
+
+[padding-lr-16] {
+    --padding-start: 16px;
+    --padding-end: 16px;
+}
+
+ 
+
+ion-button {
+
+    &:not([shape="round"]) {
+        --border-radius: 10px;
+    }
+
+    font-weight: 700;
+    letter-spacing: normal;
+
+    &:not(.button-large) {
+        &:not(.button-small) {
+            min-height: 44px;
+            font-size: 12px;
+        }
+
+    }
+
+    &:not(.button-small) {
+        &:not(.button-large) {
+            min-height: 44px;
+            font-size: 12px;
+        }
+
+    }
+
+    &.button-large {
+        font-size: 16px;
+        min-height: 54px;
+
+        ion-icon {
+            font-size: 18px;
+
+        }
+    }
+
+    &.danger-gradiant {
+
+         --ion-color-base: linear-gradient(135deg, var(--ion-danger-gradient-start) 0%, var(--ion-danger-gradient-end) 100%) !important;
+    }
+}
+
+
+.auth-container {
+    background-color: #f0f0f0;
+    .form {
+        background-color: #f0f0f0;
+        .logo {
+            margin: 8vh 0;
+        }
+    }
+
+    .form-title {
+        font-size: 40px;
+        color: var(--ion-color-dark);
+        margin-bottom: 24px;
+        margin-top: 43px;
+    }
+}
+
+.instruction {
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 15px;
+    color: var(--ion-color-dark)
+}
+
+.buttons {
+    ion-button {
+        margin-top: 24px;
+        margin-bottom: 24px;
+
+        ion-icon {
+            font-size: 14px;
+            margin: 10px;
+        }
+    }
+}
+
+
+ion-footer {
+    &[auth] {
+        .option-auth {
+            p {
+                margin: 0;
+                font-size: 15px;
+                color: var(--ion-color-dark)
+            }
+
+            ion-button {
+                font-size: 15px;
+                text-transform: none;
+                height: 20px;
+                margin: 0;
+                margin-bottom: 8px;
+                min-height: unset;
+            }
+        }
+
+    }
+}
+
+ion-list {
+    &[login-form] {
+        margin-bottom: 0;
+        background-color: #f0f0f0;
+        ion-item {
+            border-radius: 5px;
+            border: 1px solid #E7E9EB;
+            margin: 16px 0;
+
+            ion-icon {
+                &[slot="start"] {
+                    font-size: 20px;
+                    color: #707070;
+                }
+            }
+        }
+    }
+}
+
+.or {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    &:before {
+        $lineWidth: 120px;
+        width: $lineWidth;
+        height: 1px;
+        content: "";
+        background: #E4E4E4;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -$lineWidth/2;
+    }
+
+    span {
+        background: #f0f0f0;
+        font-size: 14px;
+        color: #707070;
+        font-weight: 700;
+        padding: 0 16px;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.toolbar-logo-back {
+    margin-left: -27px;
+    text-align: center;
+
+    img {
+        max-height: 90px;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+}
+
+.toolbar-logo {
+    text-align: center;
+    color:#f0f0f0;
+    img {
+        width: 150px;
+        object-fit: contain;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
+
+.footer-partner {
+    padding: 16px 24px;
+
+    ion-button {
+        margin-bottom: 16px;
+    }
+
+    .partners {
+        margin-left: -8px;
+        margin-right: -8px;
+
+        .row-partners {
+            padding: 8px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            img {
+                max-width: 58px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+   
+ion-footer {
+    &[onrow] {
+        ion-button {
+            margin-bottom: 4px;
+        }
+
+        .footer-partner {
+            padding-top: 0;
+
+            .partners {
+                .row-partners {
+                    margin-left: -1px;
+                    margin-right: -1px;
+                    display: flex;
+                    align-items: center;
+
+                    .img {
+                        padding-left: 1px;
+                        padding-right: 1px;
+
+                        img {
+                            width: auto;
+                            height: auto;
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+ion-segment{
+    padding: 3px;
+    background: rgba(118,118,128,0.24);
+    width: 100%;
+    &[shorting]{
+        ion-segment-button{
+            --background-checked:var(--ion-color-danger) !important;
+            --color-checked: var(--ion-color-danger-contrast) !important;
+            --indicator-height:0px;
+            min-height: 42px;
+            border-radius: 8px;
+            border: none;
+            position: relative;
+            max-width: unset !important;
+            &+ion-segment-button{
+                &:before{
+                    position: absolute;
+                    left: 0;
+                    height: 70%;
+                    top: 15%;
+                    width: 1px;
+                    content: "";
+                    background: rgba(142,142,147,0.30);
+                }
+            }
+        }
+    }
+}
+.setting-modal .modal-wrapper {
+    height: 35%;
+    top: 65%;
+    background-color: white;
+    position: absolute; 
+    display: block;  
+}
+
+.popover-content.sc-ion-popover-ios {
+    border-radius: 10px;
+    top: 189px;
+    left: calc(50px - var(--ion-safe-area-right, 0px))!important;
+    transform-origin: right top;
+    width: auto;
+}

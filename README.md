@@ -2,7 +2,7 @@
 
 Source code repository for [ebook](https://leanpub.com/create_real_world_chat_application_with_ionic_and_django) 
 
-These tutorials will focus on how to create a real world mobile chat application with Ionic 5/Angular 11, Capacitor 3 and Django 3. The **Chat** application will manage private chat between two persons and not a group chat application. 
+These tutorials will focus on how to create a real world mobile chat application with Ionic 5/Angular 12, Capacitor 3 and Django 3. The **Chat** application will manage private chat between two persons and not a group chat application. 
  
 
 For this application, we can list these main functionalities :
